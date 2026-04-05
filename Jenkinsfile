@@ -2,20 +2,23 @@ pipeline {
     agent any
 
     stages {
+        stage('Checkout Code') {
+            steps {
+                git 'https://github.com/MPK2004/SwiftSupply'
+            }
+        }
         stage('Build') {
             steps {
-                echo 'Building'
+                sh 'echo "building the app"'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing'
+                sh 'echo "Running tests"'
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying'
-            }
-        }
+        stage('Deploy'){
+            steps{
+                sh ;echo "deploying"'
     }
 }
